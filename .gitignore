@@ -1,0 +1,25 @@
+﻿# Visual Studio
+.vs/
+*.vcxproj.user
+*.VC.db
+*.ipch
+*.suo
+*.user
+*.opendb
+*.idb
+*.pdb
+*.obj
+*.log
+
+# Build outputs
+x64/
+x86/
+Debug/
+Release/
+*.exe
+*.dll
+*.lib
+
+# OS junk
+Thumbs.db
+.DS_Store
