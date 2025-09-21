@@ -131,6 +131,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\cuda-multiband-blender.cpp" />
+    <ClCompile Include="src\MultibandBlender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MultibandBlender.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
