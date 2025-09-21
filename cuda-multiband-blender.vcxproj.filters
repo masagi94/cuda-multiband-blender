@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cuda-multiband-blender.cpp">
+    <ClCompile Include="src\cuda-multiband-blender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
