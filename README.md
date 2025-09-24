@@ -6,6 +6,7 @@ I will be implementing multiband blending from scratch, and comparing it with fe
 
 I built this project as part of a technical interview demo.
 
+
 ### OpenCV Build Notes
 
 This project uses a custom OpenCV build with CUDA support.  
@@ -35,16 +36,46 @@ Below are the exact versions and steps I used (Windows, RTX 3080):
 - WITH_CUDA
 - ENABLE_FAST_MATH
 - BUILD_OPENCV_WORLD
-- OPENCV_EXTRA_MODULES_PATH → `opencv_contrib/modules`
+- OPENCV_EXTRA_MODULES_PATH -> `opencv_contrib/modules`
 - OPENCV_DNN_CUDA
 - BUILD_OPENCV_DNN
 
 **Then enable:**
 - CUDA_FAST_MATH
 - CUDA_ARCH_BIN = 8.6 (RTX 3080)
-- CMAKE_INSTALL_DIRECTORY → `install/`
+- CMAKE_INSTALL_DIRECTORY -> `install/`
 - CMAKE_CONFIGURATION_TYPES = Release
 
 **Generate & Build:**
-```powershell
-"C:\Programming Files\CMake\bin\cmake.exe" --build "../OpenCV_GPU/build" --target INSTALL --config Release
+    powershell:
+    `C:\Programming Files\CMake\bin\cmake.exe" --build '../OpenCV_GPU/build' --target INSTALL --config Release`
+
+
+### Environment Variables
+
+Add the path to the dlls to your system path:
+    `C:\...\OpenCV_GPU\installe\x64\vc17\bin`
+
+
+### Visual Studio Setup
+
+Now that our CUDA-enabled OpenCV is compiled, we need to point our development environment to it.
+Right click your project and go to Properties. Add the following paths and variables:
+
+C/C++ -> General -> Additional Include Directories:
+    `C:\...\OpenCV_GPU\install\include`
+
+Linker -> General -> Additional Include Directories:
+    `C:\...\OpenCV_GPU\install\x64\vc17\lib`
+
+Linker -> General -> Input:
+    `opencv_img_hash490.lib`
+    `opencv_world490.lib`
+
+Set the project to `Release` and `x64`. Now, we can import CUDA-enabled OpenCV!
+Use these in your program to verify OpenCV can find your gpu:
+    `cv::cuda::getCudaEnabledDeviceCount();`
+    `cv::cuda::DeviceInfo info(0);`
+
+
+
