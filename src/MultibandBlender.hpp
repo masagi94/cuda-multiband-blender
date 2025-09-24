@@ -11,7 +11,7 @@ public:
     // Blend two images with a mask
     cv::Mat blend(const cv::Mat& img1, const cv::Mat& img2, const cv::Mat& mask);
 
-private:
+//private:
     int levels_;
 
     // CUDA helper functions

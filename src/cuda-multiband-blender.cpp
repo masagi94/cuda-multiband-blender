@@ -2,6 +2,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <filesystem>
+#include <string>
 
 #include "MultibandBlender.hpp"
 #include "masks.hpp"
@@ -55,6 +56,7 @@ static cv::Mat runFeatherBlend(const cv::Mat& left_16s, const cv::Mat& right_16s
 }
 
 
+
 int main()
 {
     bool cuda_available = checkForCuda();
@@ -98,6 +100,26 @@ int main()
     const double alpha = 1.5;
     const double beta = 0;
     right_img.convertTo(right_img, -1, alpha, beta);
+
+
+
+    MultibandBlender custom_blender;
+
+    cv::cuda::GpuMat left_img_gpu;
+    std::vector< cv::cuda::GpuMat> pyr_results;
+    left_img_gpu.upload(left_img);
+    pyr_results = custom_blender.buildGaussianPyramid(left_img_gpu, 5);
+
+    std::cout << "*** pyr size: " << pyr_results.size();
+
+    for (int i = 0; i < pyr_results.size(); i++) {
+        cv::Mat temp;
+        pyr_results[i].download(temp);
+        cv::imshow(std::to_string(i), temp);
+    }
+    cv::waitKey(0);
+
+    
 
     cv::Mat left_img_16s, right_img_16s;
     left_img.convertTo(left_img_16s, CV_16SC3);

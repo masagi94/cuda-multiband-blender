@@ -37,7 +37,7 @@ namespace blend::masks {
     }
 
     // Returns the midpoint between the last non-black col of left image and first non-black of the right image.
-    static int findSeamCenterCol(const cv::Mat& img_left, const cv::Mat& img_right, int non_black_threshold) {
+    static int findSeamCenterCol(const cv::Mat& img_left, const cv::Mat& img_right, int non_black_threshold = 1) {
 
         CV_Assert(img_left.size() == img_right.size() && img_left.type() == CV_8UC3 && img_right.type() == CV_8UC3);
         const int width = img_left.cols;
@@ -70,7 +70,7 @@ namespace blend::masks {
     }
 
     // Make soft gradient masks with a configurable overlap width.
-    void makeSoftMasks(const cv::Mat& img_left, const cv::Mat& img_right, cv::Mat& mask_left, cv::Mat& mask_right, int overlap_cols) {
+    void makeSoftMasks(const cv::Mat& img_left, const cv::Mat& img_right, cv::Mat& mask_left, cv::Mat& mask_right, int overlap_cols = 50) {
 
         CV_Assert(img_left.size() == img_right.size());
         const int width = img_left.cols, height = img_left.rows;
