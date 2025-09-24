@@ -119,7 +119,19 @@ int main()
     }
     cv::waitKey(0);
 
+    /*auto laplac_result = custom_blender.buildLaplacianPyramid(pyr_results);
     
+    std::cout << "*** pyr size: " << laplac_result.size();
+
+    for (int i = 0; i < laplac_result.size(); i++) {
+        cv::Mat temp;
+        laplac_result[i].download(temp);
+        cv::imshow(std::to_string(i), temp);
+    }
+    cv::waitKey(0);*/
+
+
+
 
     cv::Mat left_img_16s, right_img_16s;
     left_img.convertTo(left_img_16s, CV_16SC3);
