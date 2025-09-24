@@ -15,10 +15,10 @@ private:
     int levels_;
 
     // CUDA helper functions
-    std::vector<cv::cuda::GpuMat> build_gaussian_pyramid_cuda(const cv::cuda::GpuMat& img, int levels);
-    std::vector<cv::cuda::GpuMat> build_laplacian_pyramid_cuda(const std::vector<cv::cuda::GpuMat>& gauss);
-    std::vector<cv::cuda::GpuMat> blend_pyramids_cuda(const std::vector<cv::cuda::GpuMat>& lap1, 
+    std::vector<cv::cuda::GpuMat> buildGaussianPyramid(const cv::cuda::GpuMat& img, int levels);
+    std::vector<cv::cuda::GpuMat> buildLaplacianPyramid(const std::vector<cv::cuda::GpuMat>& gauss);
+    std::vector<cv::cuda::GpuMat> blendPyramids(const std::vector<cv::cuda::GpuMat>& lap1, 
                                                       const std::vector<cv::cuda::GpuMat>& lap2, 
                                                       const std::vector<cv::cuda::GpuMat>& mask_gauss);
-    cv::cuda::GpuMat reconstruct_from_laplacian_pyramid_cuda(const std::vector<cv::cuda::GpuMat>& lap);
+    cv::cuda::GpuMat reconstructFromLaplacianPyramid(const std::vector<cv::cuda::GpuMat>& lap);
 };
