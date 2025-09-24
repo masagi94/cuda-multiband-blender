@@ -79,24 +79,7 @@ Use these in your program to verify OpenCV can find your gpu:
 
 
 ## Project Structure
-.
-├── data/ # Input images (place your source images here. I use 2 iamges of an f16, split near the middle, with ~10% overlap between them)
-│ ├── f16_left.png
-│ └── f16_right.png
-├── results/ # Output results (auto-created if not present)
-│ ├── multiband_blend.png
-│ ├── feather_blend.png
-│ ├── mask.png
-│ └── pyramids/ # Outputs resulting pyramids. Number depends on pyramid levels used.
-│   ├── gauss_0.png
-│   ├── lap_0.png
-│   └── gauss_mask_0.png
-├── src/
-│ ├── MultibandBlender.cpp
-│ ├── MultibandBlender.hpp
-│ ├── masks.cpp
-│ └── masks.hpp
-└── README.md
+<pre> ```text . ├── data/ # Input images (place your source images here) │ ├── f16_left.png │ └── f16_right.png ├── results/ # Output results (auto-created if not present) │ ├── multiband_blend.png │ ├── feather_blend.png │ ├── mask.png │ └── pyramids/ # Outputs resulting pyramids. Number depends on pyramid levels used. │ ├── gauss_0.png │ ├── lap_0.png │ └── gauss_mask_0.png ├── src/ │ ├── MultibandBlender.cpp │ ├── MultibandBlender.hpp │ ├── masks.cpp │ └── masks.hpp └── README.md ``` </pre>
 
 
 ## Results
