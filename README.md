@@ -78,4 +78,21 @@ Use these in your program to verify OpenCV can find your gpu:
     `cv::cuda::DeviceInfo info(0);`
 
 
+## Results
+
+Custom CUDA multiband blend:
+
+![Multiband Result](results/multiband_blend.png)
+
+OpenCV Feather blend:
+
+![Feather Result](results/feather_blend.png)
+
+Mask pyramid (left mask, Gaussian pyramid):
+
+![Mask Pyramid](results/pyramids/gauss_mask_0.png)
+
+
+
+
 
