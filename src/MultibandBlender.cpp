@@ -1,4 +1,4 @@
-#include "MultibandBlender.h"
+#include "MultibandBlender.hpp"
 
 
 cv::Mat MultibandBlender::blend(const cv::Mat& img1, const cv::Mat& img2, const cv::Mat& mask)
