@@ -132,7 +132,7 @@ int main()
     
     // Create masks
     cv::Mat left_mask, right_mask;
-    const int overlap_cols = 20;
+    const int overlap_cols = 100;
     blend::masks::makeSoftMasks(left_img, right_img, left_mask, right_mask, overlap_cols);
 
     // Create ROI

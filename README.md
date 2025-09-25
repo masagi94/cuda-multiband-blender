@@ -127,10 +127,14 @@ OpenCV Feather blend:
 
 ![Feather Result](results/feather_blend.png)
 
-Mask pyramid (left mask, Gaussian pyramid):
 
-![Mask Pyramid](results/pyramids/gauss_mask_0.png)
+## References
 
+This implementation is based on the classic paper:
+
+- Burt, P. J., & Adelson, E. H. (1983). *A Multiresolution Spline with Application to Image Mosaics*.  
+  ACM Transactions on Graphics, 2(4), 217–236.  
+  [https://doi.org/10.1145/245.247](https://doi.org/10.1145/245.247)
 
 
 
