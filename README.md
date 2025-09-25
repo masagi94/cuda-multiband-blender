@@ -102,21 +102,19 @@ Use these in your program to verify OpenCV can find your gpu:
 ```
 ## Inputs
 
-Inputs. Right image made brighter to show blending prowess:
+Left and right image inputs, with their associated masks. Right image made brighter to show blending prowess. Masks are generated at runtime:
 
 <p float="left">
   <img src="data/f16_left.png" width="48%" />
   <img src="data/f16_right_bright.png" width="48%" /> 
 </p>
 
-**Left:** Left input image                          **Right:** Right input image (brightened)
 
 <p float="left">
   <img src="results/left_mask.png" width="48%" />
   <img src="results/right_mask.png" width="48%" /> 
 </p>
 
-**Left:** Left input image mask                     **Right:** Right input image mask (program generates these)
 
 
 ## Results
