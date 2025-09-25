@@ -110,8 +110,8 @@ Inputs. Right image made brighter to show blending prowess:
 </p>
 
 <p float="left">
-  <img src="results/left_mask_.png" width="48%" />
-  <img src="results/right_mask_.png" width="48%" /> 
+  <img src="results/left_mask.png" width="48%" />
+  <img src="results/right_mask.png" width="48%" /> 
 </p>
 
 ## Results
