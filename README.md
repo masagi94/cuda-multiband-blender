@@ -88,10 +88,10 @@ Use these in your program to verify OpenCV can find your gpu:
 │ ├── multiband_blend.png
 │ ├── feather_blend.png
 │ ├── mask.png
-│ └── pyramids/ # Pyramid levels (Based on number of levels used when blending)
-│   ├── gauss_0.png
-│   ├── lap_0.png
-│   └── gauss_mask_0.png
+│ └── pyramids/ # Pyramid levels (Based on 'n' number of levels used when blending)
+│   ├── gauss_n.png
+│   ├── lap_n.png
+│   └── gauss_mask_n.png
 ├── src/
 │ ├── cuda-multiband-blender.cpp (contains main())
 │ ├── MultibandBlender.cpp
@@ -101,6 +101,13 @@ Use these in your program to verify OpenCV can find your gpu:
 └── README.md
 ```
 ## Results
+
+Inputs. Right image made brighter to show blending prowess:
+
+<p float="left">
+  <img src="data/f16_left.png" width="48%" />
+  <img src="data/f16_right_bright.png" width="48%" /> 
+</p>
 
 Custom CUDA multiband blend:
 

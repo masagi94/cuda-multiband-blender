@@ -108,14 +108,15 @@ int main()
     // Set up paths for inputs and outputs 
     fs::path data_dir = "data";    
     fs::path left_img_path = data_dir / "f16_left.png";
-    fs::path right_img_path = data_dir / "f16_right.png";
-    //fs::path right_p = data_dir / "data/goose.png";
+    fs::path right_img_path = data_dir / "f16_right_bright.png";
+    //fs::path right_img_path = data_dir / "goose.png";
 
     fs::path results_dir = "results";
     fs::create_directories(results_dir);
     fs::path multiband_result_path = results_dir / "multiband_blend.png";
     fs::path feather_result_path = results_dir / "feather_blend.png";
-    fs::path mask_result_path = results_dir / "mask.png";
+    fs::path left_mask_result_path = results_dir / "left_mask.png";
+    fs::path right_mask_result_path = results_dir / "right_mask.png";
     fs::path pyr_dir = results_dir / "pyramids";
     fs::create_directories(pyr_dir);
 
@@ -139,12 +140,6 @@ int main()
     const int height = left_img.rows;
     cv::Rect roi_location(cv::Point(0, 0), cv::Size(width, height));
 
-    // Brighten one image to make blending more difficult
-    const double alpha = 1.5;
-    const double beta = 0;
-    right_img.convertTo(right_img, -1, alpha, beta);
-
-
     // Run custom blender, save output
     MultibandBlender custom_blender(8);
     cv::Mat overlap_blended = custom_blender.blend(left_img, right_img, left_mask);
@@ -160,7 +155,8 @@ int main()
     // Run feather blender, save output
     cv::Mat feather_output = runFeatherBlend(left_img_16s, right_img_16s, left_mask, right_mask, roi_location);
     cv::imwrite(feather_result_path.string(), feather_output);
-    cv::imwrite(mask_result_path.string(), left_mask);
+    cv::imwrite(left_mask_result_path.string(), left_mask);
+    cv::imwrite(right_mask_result_path.string(), right_mask);
     cv::imshow("OpenCV Feather", feather_output);
     cv::waitKey(0);
 }

@@ -5,6 +5,7 @@
 
 namespace blend::masks {
 
+    // Builds the masks and applies a smooth gradient from left to right, and right to left
     static void buildCosineMasks(int width, int height, int start_col, int end_col, cv::Mat& mask_left, cv::Mat& mask_right) {
 
         mask_left.create(height, width, CV_8UC1);
