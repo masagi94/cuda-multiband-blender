@@ -109,14 +109,14 @@ Inputs. Right image made brighter to show blending prowess:
   <img src="data/f16_right_bright.png" width="48%" /> 
 </p>
 
-**Left:** Left input image  **Right:** Right input image (brightened)
+**Left:** Left input image                          **Right:** Right input image (brightened)
 
 <p float="left">
   <img src="results/left_mask.png" width="48%" />
   <img src="results/right_mask.png" width="48%" /> 
 </p>
 
-**Left:** Left input image mask  **Right:** Right input image mask (program generates these)
+**Left:** Left input image mask                     **Right:** Right input image mask (program generates these)
 
 
 ## Results
