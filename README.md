@@ -100,7 +100,7 @@ Use these in your program to verify OpenCV can find your gpu:
 │ └── masks.hpp
 └── README.md
 ```
-## Results
+## Inputs
 
 Inputs. Right image made brighter to show blending prowess:
 
@@ -108,6 +108,13 @@ Inputs. Right image made brighter to show blending prowess:
   <img src="data/f16_left.png" width="48%" />
   <img src="data/f16_right_bright.png" width="48%" /> 
 </p>
+
+<p float="left">
+  <img src="results/left_mask_.png" width="48%" />
+  <img src="results/right_mask_.png" width="48%" /> 
+</p>
+
+## Results
 
 Custom CUDA multiband blend:
 
