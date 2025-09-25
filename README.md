@@ -119,7 +119,7 @@ Left and right image inputs, with their associated masks. Right image made brigh
 
 ## Results
 
-Custom CUDA multiband blend:
+Custom CUDA Multiband blend:
 
 ![Multiband Result](results/multiband_blend.png)
 
